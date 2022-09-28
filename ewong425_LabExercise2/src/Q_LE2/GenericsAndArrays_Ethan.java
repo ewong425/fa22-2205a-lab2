@@ -28,16 +28,16 @@ public class GenericsAndArrays_Ethan {
                     System.out.print("Incorrect Input! ");
                 }
             }
-            ArrayList<Object> returnArray = new ArrayList<>();
+            ArrayList<Pair> returnArray = new ArrayList<>();
             for (int i = 0; i < pair.size(); i++) {
                 if (pair.get(i).getKey().equals(input)) {
-                    returnArray.add(pair.get(i).getValue());
+                    returnArray.add((Pair) pair.get(i).getValue());
                 }
             }
+            System.out.println(returnArray.toString());
             System.out.println("Do you wish to continue? (Press y to continue or any other key to terminate.");
             cont = sc.nextLine();
         }
-        footer(2);
     }
     public static void header(int n) {
         System.out.println("Lab Exercise: " + n + "-Q1");
