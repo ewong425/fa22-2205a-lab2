@@ -9,9 +9,9 @@ public class GenericsAndArrays_Ethan {
     header(2);
     ArrayList<Integer> yearOfStudies = new ArrayList<>(Arrays.asList(2,3,4,3,2,2));
     ArrayList<String> nameOfStudents = new ArrayList<>(Arrays.asList("Harry", "Lavender", "Ron", "Hermione", "Luna", "Vincent"));
-    ArrayList<Pair> pair = new ArrayList<>(yearOfStudies.size());
+    Pair<Integer, String>[] pair = new Pair[yearOfStudies.size()];
     for(int i=0; i<yearOfStudies.size(); i++) {
-        pair.add(new Pair(yearOfStudies.get(i), nameOfStudents.get(i)));
+        pair[i] = new Pair(yearOfStudies.get(i), nameOfStudents.get(i));
     }
     Scanner sc = new Scanner(System.in);
         System.out.println("This program prints the names of the students leaders from year 2,3 and 4. \n" +
@@ -34,9 +34,9 @@ public class GenericsAndArrays_Ethan {
                 }
             }
             ArrayList<String> returnArray = new ArrayList<>();
-            for (int i = 0; i < pair.size(); i++) {
-                if (pair.get(i).getKey().equals(input)) {
-                    returnArray.add((String)pair.get(i).getValue());
+            for (int i = 0; i < pair.length; i++) {
+                if (pair[i].getKey().equals(input)) {
+                    returnArray.add(pair[i].getValue());
                 }
             }
             System.out.println(returnArray.toString());
